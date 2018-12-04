@@ -21,6 +21,13 @@ def do_calculation(complex_num, complex_seed):
     squared_complex_plus_seed = squared_complex + complex_seed
     return squared_complex_plus_seed
 
+
+
+
+
+
+
+
 def do_iteration(complex_num, complex_seed):
     """
     Takes two inputs, a complex number and a seed which is also
@@ -38,12 +45,25 @@ def do_iteration(complex_num, complex_seed):
     When this has completed, return the number of iterations that executed
     """
 
-<<<<<<< HEAD
-    new_complex_num = do_calculation(some_complex_num, some_complex_seed)
 
-    return 0
-=======
-    complex_after_do_calculation = do_calculation(some_complex_num, some_complex_seed)
 
-    return complex_after_do_calculation
->>>>>>> ae28d577802ddfe35a6552f6a0fc87a836355f09
+    new_complex_num = do_calculation(complex_num, complex_seed)
+
+
+    for i in range(20):
+        list = []
+        new_complex_num = do_calculation(new_complex_num, complex_seed)
+
+        if abs(new_complex_num) <= 2:
+            list.insert(new_complex_num)
+            how_many = len(list)
+            break
+            print('amount of iteratins: {0}'.format(how_many))
+        else:
+            print('iterated 255 times')
+    return i
+
+
+some_complex_num = 2+3j
+some_complex_seed = 1+1j
+print(do_iteration(some_complex_num, some_complex_seed))
