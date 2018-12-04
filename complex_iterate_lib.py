@@ -38,6 +38,12 @@ def do_iteration(complex_num, complex_seed):
     When this has completed, return the number of iterations that executed
     """
 
+<<<<<<< HEAD
     new_complex_num = do_calculation(some_complex_num, some_complex_seed)
 
     return 0
+=======
+    complex_after_do_calculation = do_calculation(some_complex_num, some_complex_seed)
+
+    return complex_after_do_calculation
+>>>>>>> ae28d577802ddfe35a6552f6a0fc87a836355f09
