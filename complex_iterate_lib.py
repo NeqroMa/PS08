@@ -8,6 +8,7 @@ complete the code for the functions below
 """
 import os
 
+
 def do_calculation(complex_num, complex_seed):
     """
     Takes two inputs, complex_num which is a complex number and
@@ -17,7 +18,8 @@ def do_calculation(complex_num, complex_seed):
 
     Then return the new complex number
     """
-    squared_complex = complex_num * complex_num
+    squared_complex = complex_num
+    """* complex_num"""
     squared_complex_plus_seed = squared_complex + complex_seed
     return squared_complex_plus_seed
 
@@ -50,20 +52,22 @@ def do_iteration(complex_num, complex_seed):
     new_complex_num = do_calculation(complex_num, complex_seed)
 
 
-    for i in range(20):
+    for i in range(255):
         list = []
-        new_complex_num = do_calculation(new_complex_num, complex_seed)
 
         if abs(new_complex_num) <= 2:
-            list.insert(new_complex_num)
+            list.append(new_complex_num)
             how_many = len(list)
-            break
-            print('amount of iteratins: {0}'.format(how_many))
+            return('amount of iteratins: {0}'.format(how_many))
         else:
-            print('iterated 255 times')
-    return i
+            if (abs(new_complex_num)>2 and i<255):
+                list.append(new_complex_num)
+                new_complex_num = do_calculation(new_complex_num, complex_seed)
+            else:
+                return('iterated 255 times')
 
 
-some_complex_num = 2+3j
-some_complex_seed = 1+1j
+some_complex_num = 3
+some_complex_seed = -0.1
+print(abs(do_calculation(some_complex_num, some_complex_seed)))
 print(do_iteration(some_complex_num, some_complex_seed))
