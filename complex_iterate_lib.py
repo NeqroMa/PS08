@@ -1,6 +1,6 @@
 """
 Problem Set 8 Complex Number Iterations
-NAME : {enter your name here}
+NAME : Nikita Lebedz
 
 complete the code for the functions below
 
@@ -17,7 +17,9 @@ def do_calculation(complex_num, complex_seed):
 
     Then return the new complex number
     """
-    return 0
+    squared_complex = complex_num * complex_num
+    squared_complex_plus_seed = squared_complex + complex_seed
+    return squared_complex_plus_seed
 
 def do_iteration(complex_num, complex_seed):
     """
@@ -35,4 +37,7 @@ def do_iteration(complex_num, complex_seed):
 
     When this has completed, return the number of iterations that executed
     """
-    return 0
+
+    complex_after_do_calculation = do_calculation(some_complex_num, some_complex_seed)
+
+    return complex_after_do_calculation
